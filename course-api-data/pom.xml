@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.java.springboot</groupId>
+  <artifactId>course-api-data</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+<!--  The spring-boot-starter-parent is a project starter. It provides default configurations for our applications. 
+      It is used internally by all dependencies. 
+      All Spring Boot projects use spring-boot-starter-parent as a parent in pom.xml file. -->
+ <parent>  
+		<groupId>org.springframework.boot</groupId>  
+		<artifactId>spring-boot-starter-parent</artifactId>  
+		<version>1.4.0.RELEASE</version>  
+ </parent>
+	
+ <dependencies>	
+<!-- spring-boot-starter-web is a  Dependency that pulls out all web related jars 
+     so that we do not need to add each one of them separately -->
+     
+  
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+  
+</dependency>
+<!-- this dependency is used to  Auto Restart of the server  -->
+<dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+    </dependency>
+<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+<!--    <dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derby</artifactId>
+			<scope>runtime</scope>
+		</dependency> -->
+		
+		 <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+		
+		<dependency>
+   				<groupId>mysql</groupId>
+    			<artifactId>mysql-connector-java</artifactId>
+    			<version>8.0.13</version>
+    
+		</dependency>
+		<dependency>
+    <groupId>org.apache.tomcat.embed</groupId>
+    <artifactId>tomcat-embed-jasper</artifactId>
+    <scope>provided</scope>
+</dependency>
+
+		
+	</dependencies>	
+	
+	<properties>
+				<java.version>1.8</java.version> 
+	</properties>
+ <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
