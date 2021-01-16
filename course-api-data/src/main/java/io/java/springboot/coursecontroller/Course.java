@@ -25,7 +25,7 @@ public class Course {
 	@ManyToOne()
 	@JoinColumn(name = "id")
 	private Topic topic;
-	
+	 
 	
 
 	public Course(String id, String name, String description,String topicId) {
