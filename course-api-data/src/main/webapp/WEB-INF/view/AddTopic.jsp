@@ -31,7 +31,8 @@ var obj= {id: id1 , name: name1 , description: description1 };
 	$("button").click(function(){
 		  alert("Topic has been added to database");
 		});
-});}
+});
+	}
 </script>
 <meta charset="ISO-8859-1">
 <title>Add a Topic</title>

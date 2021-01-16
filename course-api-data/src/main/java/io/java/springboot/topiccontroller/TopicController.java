@@ -3,22 +3,26 @@ package io.java.springboot.topiccontroller;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import org.springframework.ui.ModelMap;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin
 @RestController
 public class TopicController {
 
 	@Autowired
 	private TopicService topicService;
 	
+	@CrossOrigin
 	@RequestMapping("/topics")
 	public List<Topic> getTopics()
 	{
@@ -27,17 +31,16 @@ public class TopicController {
 		
 	}
 	
-	
-	
-	
 	@RequestMapping("/topics/{id}")
-	public Topic getTopic(@PathVariable String id)
+	public Optional<Topic> getTopic(@PathVariable String id)
 	{
 		return topicService.getTopic(id);
 	}
 	
 	@RequestMapping(method=RequestMethod.POST,value="/addtopic")
 	public void addTopic(@RequestBody Topic topic) {
+		System.out.println(topic.getId());
+		System.out.println(topic.getName());
 		topicService.addTopic(topic);
 		
 	}

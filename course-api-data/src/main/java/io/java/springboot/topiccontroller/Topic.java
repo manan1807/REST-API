@@ -1,9 +1,12 @@
 package io.java.springboot.topiccontroller;
 
 import javax.persistence.Entity;
+
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="topic")
 public class Topic {
 
 	@Id

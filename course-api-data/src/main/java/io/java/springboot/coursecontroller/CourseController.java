@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,7 +29,7 @@ public class CourseController {
 	}
 
 	@RequestMapping("/topics/{topicId}/courses/{id}")
-	public Course getCourse(@PathVariable String topicId)
+	public Optional<Course> getCourse(@PathVariable String topicId)
 	{
 		return courseService.getCourse(topicId);
 	}

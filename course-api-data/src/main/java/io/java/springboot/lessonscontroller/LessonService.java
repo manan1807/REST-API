@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,10 +24,10 @@ public class LessonService {
 		return lesson;
 	}
 	
-	public Lessons getLesson(String id)
+	public Optional<Lessons> getLesson(String id)
 	{
 		//return topics.stream().filter(t -> t.getId().equals(id)).findFirst().get();
-		return lessonRepository.findOne(id);
+		return lessonRepository.findById(id);
 	}
 
 	public void addLesson(Lessons lesson) {
@@ -53,7 +54,7 @@ public class LessonService {
 //		topics.removeIf(t -> t.getId().equals(id));
 //		return;
 		
-		lessonRepository.delete(id);
+		lessonRepository.deleteById(id);
 	}
 	
 }

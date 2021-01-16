@@ -3,6 +3,7 @@ package io.java.springboot.topiccontroller;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,10 +23,10 @@ public class TopicService {
 		return topics;
 	}
 	
-	public Topic getTopic(String id)
+	public Optional<Topic> getTopic(String id)
 	{
 		//return topics.stream().filter(t -> t.getId().equals(id)).findFirst().get();
-		return topicRepository.findOne(id);
+		return topicRepository.findById(id);
 	}
 
 	public void addTopic(Topic topic) {
@@ -52,7 +53,7 @@ public class TopicService {
 //		topics.removeIf(t -> t.getId().equals(id));
 //		return;
 		
-		topicRepository.delete(id);
+		topicRepository.deleteById(id);
 	}
 	
 }
